@@ -9,7 +9,7 @@ function validate()
 
 	if( document.myForm.Email.value == "" ){
 		alert( "Please provide your Email." );
-		var validEmail = validateEmail();
+		
 		document.myForm.Email.focus() ;
 		return false;
 	}
@@ -46,7 +46,7 @@ function validate()
 
 function validateEmail()
 {
-	var emailID = document.myForm.EMail.value;
+	var emailID = document.myForm.Email.value;
 	atpos = emailID.indexOf("@");
 	dotpos = emailID.lastIndexOf(".");
 	if (atpos < 1 || ( dotpos - atpos < 2 ))
