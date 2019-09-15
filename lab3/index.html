@@ -3,77 +3,59 @@
 <head>
 	<title></title>
 </head>
-<body >
-	<script type="text/javascript">
-		// document.write("Hello I am JS");
-		//first way of wrinting obj
+<body>
+
+	<div id="dynamicDiv">
+	</div>
+
+<script type="text/javascript">
+	//first way of wrinting obj
+		// var studentList = [
+		// {"SNo":1,"Name":"Ishwor","Phone":9843750658},
+		// {"SNo":2,"Name":"Hari","Phone":9843750658},
+		// {"SNo":3,"Name":"Sita","Phone":9843750658},
+		// {"SNo":4,"Name":"Usha","Phone":9843750658},
+		// {"SNo":5,"Name":"Messi","Phone":9843750658}
+		// ];
 		var studentList = [
-		{"SNo":1,"Name":"Ishwor","Phone":9843750658},
-		{"SNo":2,"Name":"Hari","Phone":9843750658},
-		{"SNo":3,"Name":"Sita","Phone":9843750658},
-		{"SNo":4,"Name":"Usha","Phone":9843750658},
-		{"SNo":5,"Name":"Messi","Phone":9843750658}
-		];
-		var myTable = "<table border='1'><tr><td>S.No</td><td>Name</td><td>Phone</td></tr>";
-		//myTable + = "<tr><td>S.No</td><td>Name</td></tr>"
-		for (var i =0 ; i<studentList.length ;i++) {
-			myTable += "<tr><td>"+studentList[i].SNo+"</td><td>"+studentList[i].Name+"</td><td>"+studentList [i].Phone+"</td></tr>";
-			
-		}
+		[1,"Ishwor",98000000000],
+		[2,"Panta",987000000000],
+		[3,"Gita",98698000000]
+		]
 
-		document.write(myTable);
+	var my_table = document.createElement('table');
+	my_table.border = '1';
+	var tr_head = document.createElement("tr");
+	var td_SNo = document.createElement("td");
+	td_SNo.appendChild(document.createTextNode("SNo"));
+	var td_Name = document.createElement("td");
+	td_Name.appendChild(document.createTextNode("Name"));
+	var td_Phone = document.createElement("td");
+	td_Phone.appendChild(document.createTextNode("Phone"));
 
-		//first way to declare array good pratice to do
-		var table_head = ["S.No","Name","Phone"];
-		//second way
-		var table_head =  new Array();
-		table_head[0]="S.No";
-		table_head[1]="Name";
-		table_head[2]="Phone";
+	tr_head.appendChild(td_SNo);
+	tr_head.appendChild(td_Name);
+	tr_head.appendChild(td_Phone);
 
-		//object declaration
-		//first way
-		var student = {"S.No":1,"Name":"Ishwor","Phone":980000000}
-		//second way
-		var student = new object();
-		student.S.No =1;
-		student.Name = "Ishwor";
-		student.Phone = 9800000000;
+	my_table.appendChild(tr_head);
+	for (var i = 0; i < studentList.length; i++) {
 
-
+	var tr = document.createElement('tr');
+	for(j=0;j<studentList[i].length;j++){
+		var td = document.createElement("td")
+		td.appendChild(document.createTextNode(studentList[i][j]));
+		tr.appendChild(td)
+	}
+	my_table.appendChild(tr);
 	
+	}
+	 var myDiv = document.getElementById('dynamicDiv');
+	 myDiv.appendChild(my_table);
+		
+	
+
 	</script>
 
 
-<!-- <table border="5px solid black" bgcolor="">
-<thead>
-	<tr>
-		<td>S.No</td>
-		<td>Name</td>
-		<td>Phone</td>
-	</tr>
-</thead>	
-<tbody>
-	<tr>
-		<td>1.</td>
-		<td>Ishwor Panta</td>
-		<td>9843750568</td>
-	</tr>
-
-	<tr>
-		<td>1.</td>
-		<td>Ishwor Panta</td>
-		<td>9843750568</td>
-	</tr>
-
-	<tr>
-		<td>1.</td>
-		<td>Ishwor Panta</td>
-		<td>9843750568</td>
-	</tr>
-</tbody>
-
-</table> -->
-<script type="text/javascript" src="JS/script.js"></script>
 </body>
 </html>

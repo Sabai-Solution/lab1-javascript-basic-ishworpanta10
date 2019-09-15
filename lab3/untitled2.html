@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="myDiv"></div>
+<script type="text/javascript">
+
+    // var studentList = [
+    //                     {"sno":1,"name":"ram"},
+    //                     {"sno":2,"name":"phurkima"},
+    //                    ];
+
+     var studentList = [
+                        [1,"ram"],
+                        [2,"phurkima"]
+                       ];
+
+
+    //NEW WAY TO CREATE TABLE 
+var my_table = document.createElement('table');
+// <table></table>
+my_table.border = '1'; // <table border='1'></table>
+
+    var tr_head = document.createElement('tr');
+    
+    var td_sno = document.createElement('td');
+    td_sno.appendChild(document.createTextNode("SNo"));
+    var td_name = document.createElement('td');
+    td_name.appendChild(document.createTextNode("Name"));
+
+    tr_head.appendChild(td_sno);
+    tr_head.appendChild(td_name);
+
+    //<tr></tr>
+    my_table.appendChild(tr_head);
+    // <table border='1'><tr></tr></table>
+
+//TABLE ROWS
+for (i = 0; i < studentList.length; i++) 
+{
+    var tr = document.createElement('tr');
+    //TABLE COLUMNS
+    for (j = 0; j < studentList[i].length; j++) 
+    {
+        var td = document.createElement('td')
+        td.appendChild(document.createTextNode(studentList[i][j]));
+        tr.appendChild(td)
+    }
+    // for (var key in studentList[i]) {
+    //     var td = document.createElement('td')
+    //     td.appendChild(document.createTextNode(studentList[i][key]));
+    //     tr.appendChild(td)
+    // }
+    my_table.appendChild(tr);
+}
+
+document.getElementById("myDiv").appendChild(my_table);
+
+/* OLD WAY
+
+  var my_table = "<table border='1'><tr><td>sno</td><td>Name</td></tr>"
+
+    for(var i=0;i<studentList.length;i++){
+        
+
+    my_table += "<tr>";
+            my_table += "<td>";
+                my_table += studentList[i].sno;
+            my_table += "</td>";
+            my_table += "<td>";
+                my_table += studentList[i].name;
+            my_table += "</td>";
+        my_table += "</tr>";
+    }
+    my_table += "</table>";
+document.write(my_table);
+*/
+</script>
+</body>
+</html>

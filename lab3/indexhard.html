@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body >
+	<script type="text/javascript">
+		// document.write("Hello I am JS");
+		//first way of wrinting obj
+		var studentList = [
+		{"SNo":1,"Name":"Ishwor","Phone":9843750658},
+		{"SNo":2,"Name":"Hari","Phone":9843750658},
+		{"SNo":3,"Name":"Sita","Phone":9843750658},
+		{"SNo":4,"Name":"Usha","Phone":9843750658},
+		{"SNo":5,"Name":"Messi","Phone":9843750658}
+		];
+		var myTable = "<table border='1'><tr><td>S.No</td><td>Name</td><td>Phone</td></tr>";
+		//myTable + = "<tr><td>S.No</td><td>Name</td></tr>"
+		for (var i =0 ; i<studentList.length ;i++) {
+			myTable += "<tr><td>"+studentList[i].SNo+"</td><td>"+studentList[i].Name+"</td><td>"+studentList [i].Phone+"</td></tr>";
+			
+		}
+
+		document.write(myTable);
+
+		//first way to declare array good pratice to do
+		var table_head = ["SNo","Name","Phone"];
+		//second way
+		var table_head =  new Array();
+		table_head[0]="SNo";
+		table_head[1]="Name";
+		table_head[2]="Phone";
+
+		//object declaration
+		//first way
+		var student = {"SNo":1,"Name":"Ishwor","Phone":980000000}
+		//second way
+		var student = new object();
+		student.SNo =1;
+		student.Name = "Ishwor";
+		student.Phone = 9800000000;
+
+
+	
+	</script>
+
+
+<!-- <table border="5px solid black" bgcolor="">
+<thead>
+	<tr>
+		<td>S.No</td>
+		<td>Name</td>
+		<td>Phone</td>
+	</tr>
+</thead>	
+<tbody>
+	<tr>
+		<td>1.</td>
+		<td>Ishwor Panta</td>
+		<td>9843750568</td>
+	</tr>
+
+	<tr>
+		<td>1.</td>
+		<td>Ishwor Panta</td>
+		<td>9843750568</td>
+	</tr>
+
+	<tr>
+		<td>1.</td>
+		<td>Ishwor Panta</td>
+		<td>9843750568</td>
+	</tr>
+</tbody>
+
+</table> -->
+<script type="text/javascript" src="JS/script.js"></script>
+</body>
+</html>
