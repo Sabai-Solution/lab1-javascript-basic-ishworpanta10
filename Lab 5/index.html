@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Clock</title>
+<script type="text/javascript">
+	function showClock(){
+		var today = new Date();
+		var h =today.getHours();
+		var m =today.getMinutes();
+		var s =today.getSeconds();
+
+		document.getElementById("time").innerHTML=h+":"+m+":"+s+" ";
+
+	}
+
+	function startInterval(){
+	showClock();
+	setInterval("showClock()",1000);			
+	}
+
+	
+//setTimeout("showClock()",1000);	
+
+
+</script>
+</head>
+<body onload="startInterval()">
+<div id="time">
+	
+</div>
+
+
+
+</body>
+</html>
